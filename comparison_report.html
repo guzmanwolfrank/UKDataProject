@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data File Comparison Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.24.2/plotly.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .chart-container {
+            width: 100%;
+            min-height: 300px;
+            margin: 1rem 0;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 16px 0;
+            padding: 16px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Data File Comparison Report</h1>
+            <p class="text-gray-600">Generated on <span id="timestamp"></span></p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-4">File Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-gray-50 rounded">
+                        <h3 class="font-medium text-blue-600">File 1:</h3>
+                        <p class="text-sm text-gray-600 break-all">Data\Vehicles\RoadSafetyData_Vehicles_2015\Vehicles_2015.csv</p>
+                        <p class="mt-2">Rows: 257845</p>
+                        <p>Columns: 23</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded">
+                        <h3 class="font-medium text-blue-600">File 2:</h3>
+                        <p class="text-sm text-gray-600 break-all">Data\RoadSafetyData_2015\Vehicles_2015.csv</p>
+                        <p class="mt-2">Rows: 257845</p>
+                        <p>Columns: 23</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-4">Overall Similarity</h2>
+                <div id="gauge-chart" class="chart-container"></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-4">Row Comparison</h2>
+                <div id="row-comparison-chart" class="chart-container"></div>
+            </div>
+
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-4">Column Distribution</h2>
+                <div id="column-comparison-chart" class="chart-container"></div>
+            </div>
+        </div>
+
+        <div class="card mt-6">
+            <h2 class="text-xl font-semibold mb-4">Column-wise Similarity</h2>
+            <div id="bar-chart" class="chart-container h-[500px]"></div>
+        </div>
+    </div>
+
+    <script>
+        // Parse the data passed from Python
+        const data = {"bar_chart": {"columns": ["Was_Vehicle_Left_Hand_Drive?", "Towing_and_Articulation", "Journey_Purpose_of_Driver", "Age_of_Vehicle", "1st_Point_of_Impact", "Vehicle_Type", "Driver_Home_Area_Type", "Propulsion_Code", "Accident_Index", "Hit_Object_off_Carriageway", "Age_Band_of_Driver", "Engine_Capacity_(CC)", "Vehicle_Manoeuvre", "Hit_Object_in_Carriageway", "Vehicle_Leaving_Carriageway", "Vehicle_Reference", "Driver_IMD_Decile", "Vehicle_Location-Restricted_Lane", "Junction_Location", "Sex_of_Driver", "Skidding_and_Overturning", "Age_of_Driver", "Vehicle_IMD_Decile"], "percentages": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0]}, "gauge": {"overall_similarity": 100.0}, "row_comparison": {"labels": ["File 1", "File 2"], "values": [257845, 257845]}, "column_comparison": {"labels": ["Common Columns", "Unique to File 1", "Unique to File 2"], "values": [23, 0, 0]}, "timestamp": "2024-12-15 14:22:42"};
+        document.getElementById('timestamp').textContent = data.timestamp;
+
+        // Responsive layout helper
+        const getResponsiveLayout = () => {
+            return {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                margin: { t: 40, r: 30, l: 30, b: 40 },
+                font: { size: window.innerWidth < 768 ? 10 : 12 }
+            };
+        };
+
+        // Create gauge chart
+        const gauge = {
+            type: "indicator",
+            mode: "gauge+number",
+            value: data.gauge.overall_similarity,
+            title: { text: "Overall Similarity %" },
+            gauge: {
+                axis: { range: [0, 100] },
+                bar: { color: "darkblue" },
+                bgcolor: "white",
+                borderwidth: 2,
+                bordercolor: "gray",
+                steps: [
+                    { range: [0, 25], color: "#ff9999" },
+                    { range: [25, 50], color: "#ffcc99" },
+                    { range: [50, 75], color: "#99ff99" },
+                    { range: [75, 100], color: "#99ccff" }
+                ]
+            }
+        };
+
+        // Create row comparison chart
+        const rowComparison = {
+            type: 'bar',
+            x: data.row_comparison.labels,
+            y: data.row_comparison.values,
+            marker: {
+                color: ['#4299e1', '#48bb78']
+            },
+            text: data.row_comparison.values.map(String),
+            textposition: 'auto'
+        };
+
+        // Create column comparison pie chart
+        const columnComparison = {
+            type: 'pie',
+            labels: data.column_comparison.labels,
+            values: data.column_comparison.values,
+            marker: {
+                colors: ['#4299e1', '#48bb78', '#ed8936']
+            }
+        };
+
+        // Create column similarity bar chart
+        const barChart = {
+            type: 'bar',
+            x: data.bar_chart.columns,
+            y: data.bar_chart.percentages,
+            marker: {
+                color: data.bar_chart.percentages.map(p => 
+                    `rgb(${Math.round(255 * (100 - p) / 100)}, ${Math.round(255 * (100 - p) / 100)}, 255)`
+                )
+            }
+        };
+
+        // Plot all charts
+        Plotly.newPlot('gauge-chart', [gauge], getResponsiveLayout());
+        Plotly.newPlot('row-comparison-chart', [rowComparison], {
+            ...getResponsiveLayout(),
+            title: 'Number of Rows per File',
+            yaxis: { title: 'Row Count' }
+        });
+        Plotly.newPlot('column-comparison-chart', [columnComparison], {
+            ...getResponsiveLayout(),
+            title: 'Column Distribution'
+        });
+        Plotly.newPlot('bar-chart', [barChart], {
+            ...getResponsiveLayout(),
+            title: 'Column Similarity Percentages',
+            xaxis: { 
+                title: 'Columns',
+                tickangle: 45,
+                automargin: true
+            },
+            yaxis: { 
+                title: 'Similarity %',
+                range: [0, 100]
+            }
+        });
+
+        // Make charts responsive
+        window.addEventListener('resize', () => {
+            const layout = getResponsiveLayout();
+            Plotly.relayout('gauge-chart', layout);
+            Plotly.relayout('row-comparison-chart', layout);
+            Plotly.relayout('column-comparison-chart', layout);
+            Plotly.relayout('bar-chart', layout);
+        });
+    </script>
+</body>
+</html>
+        
