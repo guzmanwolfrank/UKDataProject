@@ -38,3 +38,6 @@ Data\RoadSafetyData_2015\Vehicles_2015.csv
 2:29pm After fixing bug, noticed all 2015 in separate folder is the same as data in newly organized folders, we can delete the 2015 folder. 
 
 
+Renamed 2017 accidents file from ACC to Accidents_2017. 
+Renamed CAS files in Casualties to appropriate names for their report type and year. 
+Renamed Veh.csv files to appropriate names for their report type and year. 
