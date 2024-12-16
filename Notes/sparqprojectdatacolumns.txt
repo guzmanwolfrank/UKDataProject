@@ -57,7 +57,7 @@ Created a clean data report using custom python code.
 7:49pm ran into date and time issues again, this time on hours and minutes
 
 
-****************************
+**********************************************************************************************************************************************************
 I have 3 files, combined_accidents.csv,combined_casualties.csv, combined_vehicles.csv.  They are all in a folder called Combined_Data. 
 
 Each csv file analyzes data from: 2015, 2016, 2017, 2018.  
@@ -77,21 +77,22 @@ These are the columns in the Vehicles datasheets:
 Accident_Index,Vehicle_Reference,Vehicle_Type,Towing_and_Articulation,Vehicle_Manoeuvre,Vehicle_Location-Restricted_Lane,Junction_Location,Skidding_and_Overturning,Hit_Object_in_Carriageway,Vehicle_Leaving_Carriageway,Hit_Object_off_Carriageway,1st_Point_of_Impact,Was_Vehicle_Left_Hand_Drive?,Journey_Purpose_of_Driver,Sex_of_Driver,Age_of_Driver,Age_Band_of_Driver,Engine_Capacity_(CC),Propulsion_Code,Age_of_Vehicle,Driver_IMD_Decile,Driver_Home_Area_Type,Vehicle_IMD_Decile
 
 
-List 7 questions we can ask regarding the data. 
-For each question, depict a visualization in python and seaborn
+List 12 questions we can ask regarding the data. 
+For each question, depict a visualization in python and seaborn.
 
-What are some visualizations we can build accross all the data and different spreadsheets? 
+What are some visualizations we can build accross the vehicles and casualties spreadsheet? 
 
 What observations can we make off this data? 
-
-Write a Readme.md in markdown format for this project. 
 
 Show the code used to compare and analyze the data.   Write a readme.md markdown format for Github for this project.  
 
 Write observations, findings and conclusion and make sure to make a data dictionary as well. 
 
-Show all visualizations output in html and show where the file is generated to. 
+Show all visualizations,entire readme file, observations, data dictionary,visualizations, analysis, findings, outcomes, future adjustments, and other output in html and show where the file is generated to. 
+
+*************************************************************************************************************************************************
 
 -----shown in comprehensiveanalysis in visualizations folder 8:24pm 
 
 
+---- 1:02pm analysis.ipynb and ukproject.ipynb are located in the combined data folder. 
