@@ -165,6 +165,16 @@
     .dictionary-table tr:hover {
         background-color: #f5f5f5;
     }
+    
+         .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 10px;
+        }
+
+        .grid-item {
+            text-align: center;
+        }
  
         
     </style>
@@ -464,7 +474,49 @@
     </ul>
     
 </div>
+<!------>
+  <div><h1> Accident Correlations </h1></div>
 
+  <div class="grid-container">
+        <div class="grid-item">
+            <a href="/Data/Output/hourly_distribution.png" target="_blank">
+                <img src="/Data/Output/hourly_distribution.png" alt="Hourly Distribution">
+            </a>
+            <p>Hourly Distribution</p>
+        </div>
+        <div class="grid-item">
+            <a href="/Data/Output/monthly_severity_trends.png" target="_blank">
+                <img src="/Data/Output/monthly_severity_trends.png" alt="Monthly Severity Trends">
+            </a>
+            <p>Monthly Severity Trends</p>
+        </div>
+        <div class="grid-item">
+            <a href="/Data/Output/severity_heatmap.png" target="_blank">
+                <img src="/Data/Output/severity_heatmap.png" alt="Severity Heatmap">
+            </a>
+            <p>Severity Heatmap</p>
+        </div>
+        <div class="grid-item">
+            <a href="/Data/Output/time_of_day.png" target="_blank">
+                <img src="/Data/Output/time_of_day.png" alt="Time of Day">
+            </a>
+            <p>Time of Day</p>
+        </div>
+        <div class="grid-item">
+            <a href="/Data/Output/time_severity.png" target="_blank">
+                <img src="/Data/Output/time_severity.png" alt="Time Severity">
+            </a>
+            <p>Time Severity</p>
+        </div>
+        <div class="grid-item">
+            <a href="/Data/Output/vehicle_types.png" target="_blank">
+                <img src="/Data/Output/vehicle_types.png" alt="Vehicle Types">
+            </a>
+            <p>Vehicle Types</p>
+        </div>
+    </div>
+
+<!----->
 
 
         <div id="conclusion" class="section">
