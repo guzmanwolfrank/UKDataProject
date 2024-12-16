@@ -1,0 +1,98 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Traffic Accident Analysis Report</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f5f5f5;
+                }
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                }
+                h1, h2, h3 {
+                    color: #333;
+                }
+                .summary-box {
+                    background-color: #f8f9fa;
+                    border: 1px solid #dee2e6;
+                    border-radius: 4px;
+                    padding: 15px;
+                    margin: 10px 0;
+                }
+                .visualization {
+                    text-align: center;
+                    margin: 20px 0;
+                }
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 4px;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+                }
+                .findings {
+                    background-color: #e9ecef;
+                    padding: 15px;
+                    border-radius: 4px;
+                    margin: 10px 0;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Traffic Accident Analysis Report</h1>
+                <p class="summary-box">Analysis Date: 2024-12-15 19:20:32</p>
+                
+                <div class="analysis-section">
+                    <h2>1. Yearly Accident Trends</h2>
+                    <div class="visualization">
+                        <img src="plots\yearly_trend.png" alt="Yearly Accident Trends">
+                    </div>
+                    <div class="findings">
+                        <h3>Key Findings:</h3>
+                        <ul>
+                            <li>Trend: decreasing</li>
+                            <li>Percent Change: -12.4%</li>
+                            <li>Average Yearly Accidents: 132324</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h2>2. Accident Severity Distribution</h2>
+                    <div class="visualization">
+                        <img src="plots\severity_dist.png" alt="Severity Distribution">
+                    </div>
+                    <div class="findings">
+                        <h3>Key Findings:</h3>
+                        <ul>
+                            <li>Most Common Severity: 3</li>
+                            <li>Severe Accidents: 82.2%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h2>Conclusions</h2>
+                    <div class="findings">
+                        <ul>
+                            <li>The data shows a decreasing trend in accidents 
+                                from 2015 to 2018.</li>
+                            <li>Most accidents are classified as 3 severity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+        
