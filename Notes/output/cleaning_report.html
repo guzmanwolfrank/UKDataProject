@@ -1,0 +1,372 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSV Cleaning Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f5f5f5;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            h1, h2 {
+                color: #333;
+            }
+            .summary-box {
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+                padding: 15px;
+                margin: 10px 0;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th, td {
+                border: 1px solid #dee2e6;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f8f9fa;
+            }
+            tr:nth-child(even) {
+                background-color: #f8f9fa;
+            }
+            .success {
+                color: #28a745;
+            }
+            .warning {
+                color: #ffc107;
+            }
+            .error {
+                color: #dc3545;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>CSV Cleaning Report</h1>
+            <div class="summary-box">
+                <h2>Overall Summary</h2>
+                <p>Total files processed: 12</p>
+                <p>Successfully cleaned: <span class="success">12</span></p>
+                <p>Failed cleanings: <span class="error">0</span></p>
+                <p>Total rows processed: 2204137</p>
+                <p>Total rows cleaned: 2204137</p>
+                <p>Total null values handled: 31349</p>
+                <p>Total errors found: 854364</p>
+            </div>
+
+            <h2>Folders Processed</h2>
+            <ul>
+            
+                <li>Accidents</li>
+            
+                <li>Casualties</li>
+            
+                <li>Vehicles</li>
+            
+            </ul>
+
+            <h2>Columns Processed</h2>
+            <ul>
+            
+                <li>1st_Point_of_Impact</li>
+            
+                <li>1st_Road_Class</li>
+            
+                <li>1st_Road_Number</li>
+            
+                <li>2nd_Road_Class</li>
+            
+                <li>2nd_Road_Number</li>
+            
+                <li>Accident_Index</li>
+            
+                <li>Accident_Severity</li>
+            
+                <li>Age_Band_of_Casualty</li>
+            
+                <li>Age_Band_of_Driver</li>
+            
+                <li>Age_of_Casualty</li>
+            
+                <li>Age_of_Driver</li>
+            
+                <li>Age_of_Vehicle</li>
+            
+                <li>Bus_or_Coach_Passenger</li>
+            
+                <li>Car_Passenger</li>
+            
+                <li>Carriageway_Hazards</li>
+            
+                <li>Casualty_Class</li>
+            
+                <li>Casualty_Home_Area_Type</li>
+            
+                <li>Casualty_IMD_Decile</li>
+            
+                <li>Casualty_Reference</li>
+            
+                <li>Casualty_Severity</li>
+            
+                <li>Casualty_Type</li>
+            
+                <li>Date</li>
+            
+                <li>Day_of_Week</li>
+            
+                <li>Did_Police_Officer_Attend_Scene_of_Accident</li>
+            
+                <li>Driver_Home_Area_Type</li>
+            
+                <li>Driver_IMD_Decile</li>
+            
+                <li>Engine_Capacity_(CC)</li>
+            
+                <li>Hit_Object_in_Carriageway</li>
+            
+                <li>Hit_Object_off_Carriageway</li>
+            
+                <li>Journey_Purpose_of_Driver</li>
+            
+                <li>Junction_Control</li>
+            
+                <li>Junction_Detail</li>
+            
+                <li>Junction_Location</li>
+            
+                <li>LSOA_of_Accident_Location</li>
+            
+                <li>Latitude</li>
+            
+                <li>Light_Conditions</li>
+            
+                <li>Local_Authority_(District)</li>
+            
+                <li>Local_Authority_(Highway)</li>
+            
+                <li>Location_Easting_OSGR</li>
+            
+                <li>Location_Northing_OSGR</li>
+            
+                <li>Longitude</li>
+            
+                <li>Number_of_Casualties</li>
+            
+                <li>Number_of_Vehicles</li>
+            
+                <li>Pedestrian_Crossing-Human_Control</li>
+            
+                <li>Pedestrian_Crossing-Physical_Facilities</li>
+            
+                <li>Pedestrian_Location</li>
+            
+                <li>Pedestrian_Movement</li>
+            
+                <li>Pedestrian_Road_Maintenance_Worker</li>
+            
+                <li>Police_Force</li>
+            
+                <li>Propulsion_Code</li>
+            
+                <li>Road_Surface_Conditions</li>
+            
+                <li>Road_Type</li>
+            
+                <li>Sex_of_Casualty</li>
+            
+                <li>Sex_of_Driver</li>
+            
+                <li>Skidding_and_Overturning</li>
+            
+                <li>Special_Conditions_at_Site</li>
+            
+                <li>Speed_limit</li>
+            
+                <li>Time</li>
+            
+                <li>Towing_and_Articulation</li>
+            
+                <li>Urban_or_Rural_Area</li>
+            
+                <li>Vehicle_IMD_Decile</li>
+            
+                <li>Vehicle_Leaving_Carriageway</li>
+            
+                <li>Vehicle_Location-Restricted_Lane</li>
+            
+                <li>Vehicle_Manoeuvre</li>
+            
+                <li>Vehicle_Reference</li>
+            
+                <li>Vehicle_Type</li>
+            
+                <li>Was_Vehicle_Left_Hand_Drive?</li>
+            
+                <li>Weather_Conditions</li>
+            
+            </ul>
+
+            <h2>Detailed File Reports</h2>
+            <table>
+                <tr>
+                    <th>File Name</th>
+                    <th>Original Rows</th>
+                    <th>Cleaned Rows</th>
+                    <th>Null Values</th>
+                    <th>Errors Found</th>
+                    <th>Status</th>
+                </tr>
+                
+                <tr>
+                    <td>Accidents\Accidents_2015.csv</td>
+                    
+                    <td>140056</td>
+                    <td>140056</td>
+                    <td>9023</td>
+                    <td>95163</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Accidents\Accidents_2016.csv</td>
+                    
+                    <td>136621</td>
+                    <td>136621</td>
+                    <td>8418</td>
+                    <td>45086</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Accidents\Accidents_2017.csv</td>
+                    
+                    <td>129982</td>
+                    <td>129982</td>
+                    <td>7230</td>
+                    <td>121811</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Accidents\Accidents_2018.csv</td>
+                    
+                    <td>122635</td>
+                    <td>122635</td>
+                    <td>6678</td>
+                    <td>53245</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Casualties\Casualties_2015.csv</td>
+                    
+                    <td>186189</td>
+                    <td>186189</td>
+                    <td>0</td>
+                    <td>56629</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Casualties\Casualties_2017.csv</td>
+                    
+                    <td>170993</td>
+                    <td>170993</td>
+                    <td>0</td>
+                    <td>77925</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Casualties\Casualties_2018.csv</td>
+                    
+                    <td>160597</td>
+                    <td>160597</td>
+                    <td>0</td>
+                    <td>10085</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Casualties\Causalties_2016.csv</td>
+                    
+                    <td>181384</td>
+                    <td>181384</td>
+                    <td>0</td>
+                    <td>35984</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Vehicles\Vehicles_2015.csv</td>
+                    
+                    <td>257845</td>
+                    <td>257845</td>
+                    <td>0</td>
+                    <td>80033</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Vehicles\Vehicles_2016.csv</td>
+                    
+                    <td>252500</td>
+                    <td>252500</td>
+                    <td>0</td>
+                    <td>51335</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Vehicles\Vehicles_2017.csv</td>
+                    
+                    <td>238926</td>
+                    <td>238926</td>
+                    <td>0</td>
+                    <td>147899</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Vehicles\Vehicles_2018.csv</td>
+                    
+                    <td>226409</td>
+                    <td>226409</td>
+                    <td>0</td>
+                    <td>79169</td>
+                    <td class="success">Success</td>
+                    
+                </tr>
+                
+            </table>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,97 @@
+Accident_Index,Vehicle_Reference,Casualty_Reference,Casualty_Class,Sex_of_Casualty,Age_of_Casualty,Age_Band_of_Casualty,Casualty_Severity,Pedestrian_Location,Pedestrian_Movement,Car_Passenger,Bus_or_Coach_Passenger,Pedestrian_Road_Maintenance_Worker,Casualty_Type,Casualty_Home_Area_Type,Casualty_IMD_Decile
+
+
+
+
+Accident_Index,Location_Easting_OSGR,Location_Northing_OSGR,Longitude,Latitude,Police_Force,Accident_Severity,Number_of_Vehicles,Number_of_Casualties,Date,Day_of_Week,Time,Local_Authority_(District),Local_Authority_(Highway),1st_Road_Class,1st_Road_Number,Road_Type,Speed_limit,Junction_Detail,Junction_Control,2nd_Road_Class,2nd_Road_Number,Pedestrian_Crossing-Human_Control,Pedestrian_Crossing-Physical_Facilities,Light_Conditions,Weather_Conditions,Road_Surface_Conditions,Special_Conditions_at_Site,Carriageway_Hazards,Urban_or_Rural_Area,Did_Police_Officer_Attend_Scene_of_Accident,LSOA_of_Accident_Location
+
+
+
+Accident_Index,Vehicle_Reference,Vehicle_Type,Towing_and_Articulation,Vehicle_Manoeuvre,Vehicle_Location-Restricted_Lane,Junction_Location,Skidding_and_Overturning,Hit_Object_in_Carriageway,Vehicle_Leaving_Carriageway,Hit_Object_off_Carriageway,1st_Point_of_Impact,Was_Vehicle_Left_Hand_Drive?,Journey_Purpose_of_Driver,Sex_of_Driver,Age_of_Driver,Age_Band_of_Driver,Engine_Capacity_(CC),Propulsion_Code,Age_of_Vehicle,Driver_IMD_Decile,Driver_Home_Area_Type,Vehicle_IMD_Decile
+
+
+****************
+
+
+issues:  date format change from UK to USA 
+
+12:52 
+
+
+2:11  2015 data was in another folder, made comparison program on python to check similarities.  100% match on data. 
+
+2015 Accidents match. 
+
+Data\RoadSafetyData_2015\Casualties_2015.csv
+
+Data\Casualties\RoadSafetyData_Casualties_2015\Casualties_2015.csv
+
+2015 Casualties match. 
+
+
+Data\Vehicles\RoadSafetyData_Vehicles_2015\Vehicles_2015.csv
+
+
+Data\RoadSafetyData_2015\Vehicles_2015.csv
+
+
+2:29pm After fixing bug, noticed all 2015 in separate folder is the same as data in newly organized folders, we can delete the 2015 folder. 
+
+
+Renamed 2017 accidents file from ACC to Accidents_2017. 
+Renamed CAS files in Casualties to appropriate names for their report type and year. 
+Renamed Veh.csv files to appropriate names for their report type and year. 
+
+2:41 finished reorganizing all data 
+
+3:18pm fixed UK time format and converted to US 
+
+took a break until 6:43pm
+
+Cleaned all data in the folder by using a custom data cleaner 
+
+Created a clean data report using custom python code. 
+
+7:24pm Combined all clean data into 3 spreadsheets.  
+
+7:49pm ran into date and time issues again, this time on hours and minutes
+
+
+****************************
+I have 3 files, combined_accidents.csv,combined_casualties.csv, combined_vehicles.csv.  They are all in a folder called Combined_Data. 
+
+Each csv file analyzes data from: 2015, 2016, 2017, 2018.  
+
+These are the columns in the Accidents datasheets:
+
+Accident_Index,Location_Easting_OSGR,Location_Northing_OSGR,Longitude,Latitude,Police_Force,Accident_Severity,Number_of_Vehicles,Number_of_Casualties,Date,Day_of_Week,Time,Local_Authority_(District),Local_Authority_(Highway),1st_Road_Class,1st_Road_Number,Road_Type,Speed_limit,Junction_Detail,Junction_Control,2nd_Road_Class,2nd_Road_Number,Pedestrian_Crossing-Human_Control,Pedestrian_Crossing-Physical_Facilities,Light_Conditions,Weather_Conditions,Road_Surface_Conditions,Special_Conditions_at_Site,Carriageway_Hazards,Urban_or_Rural_Area,Did_Police_Officer_Attend_Scene_of_Accident,LSOA_of_Accident_Location
+
+
+These are the columns in the Casualties datasheets:
+
+Accident_Index,Vehicle_Reference,Casualty_Reference,Casualty_Class,Sex_of_Casualty,Age_of_Casualty,Age_Band_of_Casualty,Casualty_Severity,Pedestrian_Location,Pedestrian_Movement,Car_Passenger,Bus_or_Coach_Passenger,Pedestrian_Road_Maintenance_Worker,Casualty_Type,Casualty_Home_Area_Type,Casualty_IMD_Decile
+
+
+These are the columns in the Vehicles datasheets:
+
+Accident_Index,Vehicle_Reference,Vehicle_Type,Towing_and_Articulation,Vehicle_Manoeuvre,Vehicle_Location-Restricted_Lane,Junction_Location,Skidding_and_Overturning,Hit_Object_in_Carriageway,Vehicle_Leaving_Carriageway,Hit_Object_off_Carriageway,1st_Point_of_Impact,Was_Vehicle_Left_Hand_Drive?,Journey_Purpose_of_Driver,Sex_of_Driver,Age_of_Driver,Age_Band_of_Driver,Engine_Capacity_(CC),Propulsion_Code,Age_of_Vehicle,Driver_IMD_Decile,Driver_Home_Area_Type,Vehicle_IMD_Decile
+
+
+List 7 questions we can ask regarding the data. 
+For each question, depict a visualization in python and seaborn
+
+What are some visualizations we can build accross all the data and different spreadsheets? 
+
+What observations can we make off this data? 
+
+Write a Readme.md in markdown format for this project. 
+
+Show the code used to compare and analyze the data.   Write a readme.md markdown format for Github for this project.  
+
+Write observations, findings and conclusion and make sure to make a data dictionary as well. 
+
+Show all visualizations output in html and show where the file is generated to. 
+
+-----shown in comprehensiveanalysis in visualizations folder 8:24pm 
+
+
