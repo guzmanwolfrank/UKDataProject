@@ -40,15 +40,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="p-4 bg-gray-50 rounded">
                         <h3 class="font-medium text-blue-600">File 1:</h3>
-                        <p class="text-sm text-gray-600 break-all">Data\Vehicles\RoadSafetyData_Vehicles_2015\Vehicles_2015.csv</p>
-                        <p class="mt-2">Rows: 257845</p>
-                        <p>Columns: 23</p>
+                        <p class="text-sm text-gray-600 break-all">Data\Accidents\Accidents_2015.csv</p>
+                        <p class="mt-2">Rows: 140056</p>
+                        <p>Columns: 32</p>
                     </div>
                     <div class="p-4 bg-gray-50 rounded">
                         <h3 class="font-medium text-blue-600">File 2:</h3>
-                        <p class="text-sm text-gray-600 break-all">Data\RoadSafetyData_2015\Vehicles_2015.csv</p>
-                        <p class="mt-2">Rows: 257845</p>
-                        <p>Columns: 23</p>
+                        <p class="text-sm text-gray-600 break-all">Cleaned_Data\Accidents\Accidents_2015_cleaned_20241215_184207.csv</p>
+                        <p class="mt-2">Rows: 140056</p>
+                        <p>Columns: 32</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
 
     <script>
         // Parse the data passed from Python
-        const data = {"bar_chart": {"columns": ["Was_Vehicle_Left_Hand_Drive?", "Towing_and_Articulation", "Journey_Purpose_of_Driver", "Age_of_Vehicle", "1st_Point_of_Impact", "Vehicle_Type", "Driver_Home_Area_Type", "Propulsion_Code", "Accident_Index", "Hit_Object_off_Carriageway", "Age_Band_of_Driver", "Engine_Capacity_(CC)", "Vehicle_Manoeuvre", "Hit_Object_in_Carriageway", "Vehicle_Leaving_Carriageway", "Vehicle_Reference", "Driver_IMD_Decile", "Vehicle_Location-Restricted_Lane", "Junction_Location", "Sex_of_Driver", "Skidding_and_Overturning", "Age_of_Driver", "Vehicle_IMD_Decile"], "percentages": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0]}, "gauge": {"overall_similarity": 100.0}, "row_comparison": {"labels": ["File 1", "File 2"], "values": [257845, 257845]}, "column_comparison": {"labels": ["Common Columns", "Unique to File 1", "Unique to File 2"], "values": [23, 0, 0]}, "timestamp": "2024-12-15 14:22:42"};
+        const data = {"bar_chart": {"columns": ["Location_Easting_OSGR", "Police_Force", "Road_Type", "Road_Surface_Conditions", "1st_Road_Number", "Light_Conditions", "2nd_Road_Class", "Carriageway_Hazards", "Longitude", "Day_of_Week", "Speed_limit", "Number_of_Vehicles", "Accident_Index", "Pedestrian_Crossing-Human_Control", "Number_of_Casualties", "1st_Road_Class", "Date", "Location_Northing_OSGR", "LSOA_of_Accident_Location", "Junction_Detail", "Urban_or_Rural_Area", "Local_Authority_(Highway)", "Latitude", "Weather_Conditions", "Pedestrian_Crossing-Physical_Facilities", "Local_Authority_(District)", "Time", "2nd_Road_Number", "Accident_Severity", "Did_Police_Officer_Attend_Scene_of_Accident", "Junction_Control", "Special_Conditions_at_Site"], "percentages": [99.98072199691552, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 99.98072199691552, 100.0, 100.0, 100.0, 56.51025304164049, 100.0, 100.0, 100.0, 100.0, 99.98072199691552, 93.64754098360656, 100.0, 100.0, 99.97215399554464, 99.98072199691552, 100.0, 100.0, 100.0, 99.98714799794368, 100.0, 100.0, 100.0, 100.0, 100.0]}, "gauge": {"overall_similarity": 98.43874950019992}, "row_comparison": {"labels": ["File 1", "File 2"], "values": [140056, 140056]}, "column_comparison": {"labels": ["Common Columns", "Unique to File 1", "Unique to File 2"], "values": [32, 0, 0]}, "timestamp": "2024-12-15 18:49:36"};
         document.getElementById('timestamp').textContent = data.timestamp;
 
         // Responsive layout helper

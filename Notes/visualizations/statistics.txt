@@ -1,0 +1,10 @@
+Traffic Accident Analysis Statistics
+==================================
+
+Total Accidents: 392,673
+Fatal Accidents: 0
+Serious Accidents: 0
+Slight Accidents: 0
+Total Casualties: 517,779
+Total Vehicles: 723,180
+Average Casualties per Accident: 1.32

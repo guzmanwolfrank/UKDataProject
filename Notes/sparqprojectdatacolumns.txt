@@ -43,3 +43,13 @@ Renamed CAS files in Casualties to appropriate names for their report type and y
 Renamed Veh.csv files to appropriate names for their report type and year. 
 
 2:41 finished reorganizing all data 
+
+3:18pm fixed UK time format and converted to US 
+
+took a break until 6:43pm
+
+Cleaned all data in the folder by using a custom data cleaner 
+
+Created a clean data report using custom python code. 
+
+7:24pm Combined all clean data into 3 spreadsheets.  
