@@ -175,7 +175,19 @@
         .grid-item {
             text-align: center;
         }
- 
+  .tableau-container {
+        width: 100%;
+        height: 100vh;  /* Full viewport height */
+        margin: 20px 0;
+        position: relative;
+    }
+    
+    .tableau-container .tableauPlaceholder {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
         
     </style>
 </head>
@@ -516,8 +528,49 @@
         </div>
     </div>
 
-<!----->
+<!-Tableau---->
+  <div class="section">
+        <h2>Tableau: Interactive Visualization</h2>
+        <div class="tableau-container">
+            <div class='tableauPlaceholder' id='viz1734461709351' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Location, Time of Day and Year ' 
+                             src='https://public.tableau.com/static/images/uk/uksafetydata/LocationTimeofDayandYear/1_rss.png' 
+                             style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='uksafetydata/LocationTimeofDayandYear' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/uk/uksafetydata/LocationTimeofDayandYear/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='showVizHome' value='no' />
+                    <param name='device' value='desktop' />
+                </object>
+            </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1734461709351');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width = '100%';
+                vizElement.style.height = '100vh';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
+    </div>
 
+<!----->
 
         <div id="conclusion" class="section">
             <h2>Conclusions and Recommendations</h2>
