@@ -2,6 +2,8 @@
 
 ![UK Traffic Study Banner](Data/Output/ukstudy.png)
 
+# [Online Version of Report/HTML](https://wolfrankguzman.com/report.html)
+
 ## Overview
 A comprehensive analysis of UK road safety data from 2015-2018, examining over 529,294 traffic accidents to understand patterns, risk factors, and potential intervention points for improving road safety.
 
