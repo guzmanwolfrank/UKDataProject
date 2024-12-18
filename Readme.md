@@ -87,10 +87,10 @@ Total records analyzed: 529,294 accidents
 - Distinct pedestrian and cyclist patterns
 
 ## Visualizations
-![Hourly Distribution](\Data\Output\hourly_distribution.png)
-![Monthly Severity Trends](\Data\Output\monthly_severity_trends.png)
-![Severity Heatmap](\Data\Output\severity_heatmap.png)
-![Time of Day Analysis](\Data\Output\time_of_day.png)
+![Hourly Distribution](Data/Output/hourly_distribution.png)
+![Monthly Severity Trends](Data/Output/monthly_severity_trends.png)
+![Severity Heatmap](Data/Output/severity_heatmap.png)
+![Time of Day Analysis](Data/Output/time_of_day.png)
 
 ## Interactive Dashboards
 Access the interactive Tableau dashboards:
