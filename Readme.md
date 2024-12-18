@@ -1,6 +1,6 @@
 # UK Traffic Accident Analysis (2015-2018)
 
-![UK Traffic Study Banner](\Data\Output\ukstudy.png)
+![UK Traffic Study Banner](Data/Output/ukstudy.png)
 
 ## Overview
 A comprehensive analysis of UK road safety data from 2015-2018, examining over 529,294 traffic accidents to understand patterns, risk factors, and potential intervention points for improving road safety.
