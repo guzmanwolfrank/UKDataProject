@@ -1,6 +1,6 @@
 # UK Traffic Accident Analysis (2015-2018)
 
-![UK Traffic Study Banner](Data\Output\ukstudy.png)
+![UK Traffic Study Banner](\Data\Output\ukstudy.png)
 
 ## Overview
 A comprehensive analysis of UK road safety data from 2015-2018, examining over 529,294 traffic accidents to understand patterns, risk factors, and potential intervention points for improving road safety.
@@ -87,10 +87,10 @@ Total records analyzed: 529,294 accidents
 - Distinct pedestrian and cyclist patterns
 
 ## Visualizations
-![Hourly Distribution](Data\Output\hourly_distribution.png)
-![Monthly Severity Trends](Data\Output\monthly_severity_trends.png)
-![Severity Heatmap](Data\Output\severity_heatmap.png)
-![Time of Day Analysis](Data\Output\time_of_day.png)
+![Hourly Distribution](\Data\Output\hourly_distribution.png)
+![Monthly Severity Trends](\Data\Output\monthly_severity_trends.png)
+![Severity Heatmap](\Data\Output\severity_heatmap.png)
+![Time of Day Analysis](\Data\Output\time_of_day.png)
 
 ## Interactive Dashboards
 Access the interactive Tableau dashboards:
