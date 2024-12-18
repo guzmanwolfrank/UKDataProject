@@ -84,7 +84,7 @@
         justify-content: center;
     }
     
-     .modal-image {
+    .modal-image {
         max-width: 90%;
         max-height: 80vh;
         object-fit: contain;
@@ -92,9 +92,8 @@
         transition: transform 0.3s ease;
     }
     
-    .modal.active .modal-image {
-        transform: scale(4);  /* Changed from scale(10) to scale(4) */
-        transition: transform 0.3s ease;
+    .modal-image.zoomed {
+        transform: scale(4);
     }
     
     .close {
@@ -122,6 +121,13 @@
         text-align: center;
     }
     
+    .zoom-instructions {
+        color: white;
+        font-size: 14px;
+        margin-top: 10px;
+        opacity: 0.8;
+    }
+    
         </style>
     </head>
     <body>
@@ -132,13 +138,6 @@
                     <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\age_distribution.png" alt="Age Distribution">
                 </div>
                 <div class="title">Age Distribution</div>
-            </div>
-        
-            <div class="grid-item">
-                <div class="image-container">
-                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\age_severity.png" alt="Age Severity">
-                </div>
-                <div class="title">Age Severity</div>
             </div>
         
             <div class="grid-item">
@@ -160,13 +159,6 @@
                     <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\day_severity.png" alt="Day Severity">
                 </div>
                 <div class="title">Day Severity</div>
-            </div>
-        
-            <div class="grid-item">
-                <div class="image-container">
-                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\driver_journey_age.png" alt="Driver Journey Age">
-                </div>
-                <div class="title">Driver Journey Age</div>
             </div>
         
             <div class="grid-item">
@@ -227,13 +219,6 @@
         
             <div class="grid-item">
                 <div class="image-container">
-                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\severity_pie.png" alt="Severity Pie">
-                </div>
-                <div class="title">Severity Pie</div>
-            </div>
-        
-            <div class="grid-item">
-                <div class="image-container">
                     <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\speed_severity.png" alt="Speed Severity">
                 </div>
                 <div class="title">Speed Severity</div>
@@ -251,13 +236,6 @@
                     <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\time_severity.png" alt="Time Severity">
                 </div>
                 <div class="title">Time Severity</div>
-            </div>
-        
-            <div class="grid-item">
-                <div class="image-container">
-                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\ukstudy.png" alt="Ukstudy">
-                </div>
-                <div class="title">Ukstudy</div>
             </div>
         
             <div class="grid-item">
@@ -303,6 +281,7 @@
             <div class="modal-content">
                 <img id="modalImage" class="modal-image" src="" alt="Modal Image">
                 <div id="modalTitle" class="modal-title"></div>
+                <div class="zoom-instructions">Click image to zoom</div>
             </div>
         </div>
     
@@ -322,34 +301,31 @@
                 modal.style.display = 'block';
                 modalImg.src = img.src;
                 modalTitle.textContent = title;
-                setTimeout(() => {
-                    modal.classList.add('active');
-                }, 100);
+                modalImg.classList.remove('zoomed');
+                isZoomed = false;
             }
         });
         
+        // Toggle zoom on modal image click
+        modalImg.onclick = function(e) {
+            e.stopPropagation();
+            modalImg.classList.toggle('zoomed');
+            isZoomed = !isZoomed;
+        };
+        
         // Close modal
+        function closeModal() {
+            modalImg.classList.remove('zoomed');
+            modal.style.display = 'none';
+            isZoomed = false;
+        }
+        
         closeBtn.onclick = closeModal;
         modal.onclick = function(e) {
             if (e.target === modal) {
                 closeModal();
             }
         };
-        
-        // Toggle zoom on modal image click
-        modalImg.onclick = function(e) {
-            e.stopPropagation();
-            modal.classList.toggle('active');
-            isZoomed = !isZoomed;
-        };
-        
-        function closeModal() {
-            modal.classList.remove('active');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-            isZoomed = false;
-        }
         
         // Handle escape key
         document.addEventListener('keydown', function(e) {
