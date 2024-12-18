@@ -53,6 +53,7 @@
             padding: 30px;
             margin: 30px 0;
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         h1, h2 {
@@ -140,6 +141,7 @@
         border-collapse: collapse;
         margin: 20px 0;
         background: white;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .dictionary-table th,
@@ -170,114 +172,42 @@
         max-width: 1600px;
         margin: 0 auto;
     }
-    .grid-container{
-        display: "grid",
-        grid-template-columns: "repeat(4, 1fr)",
-        gap: "20px",
-        max-width: "1600px",
-        margin: "0 auto",
-        padding: "20px"
-    },
-    .grid-item{
-        position: "relative",
-        background: "white",
-        padding: "10px",
-        border-radius: "8px",
-        box-shadow: "0 2px 5px rgba(0,0,0,0.1)",
-        overflow: "hidden",
-        cursor: "pointer"
-    },
-    .grid-item:hover{
-        z-index: "100",
-        box-shadow: "0 8px 20px rgba(0,0,0,0.2)"
-    },
-    .image-container{
-        position: "relative",
-        overflow: "hidden",
-        border-radius: "4px",
-        aspect-ratio: "4/3"
-    },
-    .grid-item img{
-        width: "100%",
-        height: "100%",
-        object-fit: "cover",
-        display: "block",
-        transition: "transform 0.3s ease"
-    },
-    .title{
-        font-size: "14px",
-        margin-top: "8px",
-        text-align: "center",
-        color: "#333",
-        padding: "5px",
-        background: "white",
-        position: "relative",
-        z-index: "2"
-    },
-    .modal{
-        display: "none",
-        position: "fixed",
-        top: "0",
-        left: "0",
-        width: "100%",
-        height: "100%",
-        background-color: "rgba(0, 0, 0, 0.9)",
-        z-index: "1000",
-        overflow: "auto",
-        backdrop-filter: "blur(5px)"
-    },
-    .modal-content{
-        position: "relative",
-        margin: "auto",
-        padding: "20px",
-        width: "90%",
-        height: "90%",
-        display: "flex",
-        flex-direction: "column",
-        align-items: "center",
-        justify-content: "center"
-    },
-    .modal-image{
-        max-width: "90%",
-        max-height: "80vh",
-        object-fit: "contain",
-        transform: "scale(1)",
-        transition: "transform 0.3s ease"
-    },
-    .modal-image.zoomed{
-        transform: "scale(4)"
-    },
-    .close{
-        position: "fixed",
-        top: "15px",
-        right: "35px",
-        color: "#f1f1f1",
-        font-size: "40px",
-        font-weight: "bold",
-        cursor: "pointer",
-        z-index: "1001"
-    },
-    .close:hover{
-        color: "#bbb",
-        text-decoration: "none",
-        cursor: "pointer"
-    },
-    .close:focus{
-        color: "#bbb",
-        text-decoration: "none",
-        cursor: "pointer"
-    },
-    .modal-title{
-        color: "white",
-        font-size: "20px",
-        margin-top: "20px",
-        text-align: "center"
-    },
-    .zoom-instructions{
-        color: "white",
-        font-size: "14px",
-        margin-top: "10px",
-        opacity: "0.8"
+    .grid-item {
+        position: relative;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .grid-item:hover {
+        z-index: 100;
+    }
+    .grid-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 4px;
+    }
+    .zoom-container {
+        position: fixed;
+        display: none;
+        background: rgba(0,0,0,0.8);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+    .zoom-container img {
+        max-width: 800px;
+        max-height: 800px;
+        object-fit: contain;
+    }
+    .title {
+        font-size: 14px;
+        margin-top: 8px;
+        text-align: center;
+        color: #333;
     }
   .tableau-container {
         width: 100%;
@@ -348,6 +278,7 @@
     height: auto;
     display: block;
     margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
     </style>
 </head>
@@ -887,81 +818,82 @@
         </div>
         <div id="data-dictionary" class="section">
 <!------------------>
-        <div id="findings" class="section">
-            <h2>Detailed Analysis and Findings</h2>
-            
-            <h3>1. Temporal Analysis</h3>
-            <img src="time_severity.png" alt="Time of Day Analysis">
-            <div class="findings">
-                <h4>Key Observations:</h4>
-                <ul>
-                    <li>Peak accident times coincide with rush hours (7-9 AM and 4-6 PM)</li>
-                    <li>Highest severity rates occur during nighttime hours (11 PM - 4 AM)</li>
-                    <li>Early morning hours (2-5 AM) show lowest frequency but higher severity</li>
-                    <li>Weekend patterns differ significantly from weekday patterns</li>
-                </ul>
-            </div>
-
-            <h3>2. Weather Impact Analysis</h3>
-            <img src="weather_casualties.png" alt="Weather Analysis">
-            <div class="findings">
-                <h4>Key Findings:</h4>
-                <ul>
-                    <li>Adverse weather conditions significantly impact accident severity</li>
-                    <li>Rain is associated with increased accident frequency but lower average severity</li>
-                    <li>Snow and ice show lower frequency but higher severity rates</li>
-                    <li>Clear weather accounts for majority of accidents due to higher traffic volume</li>
-                </ul>
-            </div>
-
-            <h3>3. Road and Speed Analysis</h3>
-            <img src="road_severity_heatmap.png" alt="Road Type Analysis">
-            <img src="speed_severity.png" alt="Speed Analysis">
-            <div class="findings">
-                <h4>Critical Insights:</h4>
-                <ul>
-                    <li>Single carriageways account for highest number of accidents</li>
-                    <li>Higher speed limits correlate strongly with increased severity</li>
-                    <li>Urban roads show higher frequency but lower severity patterns</li>
-                    <li>Motorways show relatively low accident rates despite high speeds</li>
-                </ul>
-            </div>
-
-            <h3>4. Casualty Analysis</h3>
-            <img src="casualty_analysis.png" alt="Casualty Analysis">
-            <div class="findings">
-                <h4>Demographic Patterns:</h4>
-                <ul>
-                    <li>Young adults (18-25) show higher representation in accidents</li>
-                    <li>Elderly casualties (65+) show higher severity rates</li>
-                    <li>Pedestrian casualties show distinct age distribution patterns</li>
-                    <li>Cyclist casualties concentrate in urban areas and peak commuting times</li>
-                </ul>
-            </div>
-
-            <h3>5. Vehicle Type Analysis</h3>
-            <img src="vehicle_types.png" alt="Vehicle Analysis">
-            <div class="findings">
-                <h4>Vehicle-Specific Patterns:</h4>
-                <ul>
-                    <li>Cars represent the majority of vehicles involved</li>
-                    <li>Motorcycles show disproportionately high severity rates</li>
-                    <li>Heavy goods vehicles involved in fewer but more severe accidents</li>
-                    <li>Public transport shows lower involvement rates</li>
-                </ul>
-            </div>
-        </div>
-        <h3>6. Age Distribution Analysis</h3>
-<img src="age_distribution.png" alt="Age Distribution Analysis">
-<div class="findings">
-    <h4>Age-Related Patterns:</h4>
-    <ul>
-        <li>Young adults (17-25) show highest accident involvement</li>
-        <li>Severity rates increase with age groups</li>
-        <li>Children under 16 show distinct accident patterns</li>
-        <li>Middle-aged groups show more moderate risk levels</li>
-    </ul>
+        <!-- Find the Analysis section and add width styling to the images -->
+<div id="findings" class="section">
+    <h2>Detailed Analysis and Findings</h2>
     
+    <h3>1. Temporal Analysis</h3>
+    <img src="time_severity.png" alt="Time of Day Analysis" style="width: 50%; display: block; margin: 0 auto;">
+    <div class="findings">
+        <h4>Key Observations:</h4>
+        <ul>
+            <li>Peak accident times coincide with rush hours (7-9 AM and 4-6 PM)</li>
+            <li>Highest severity rates occur during nighttime hours (11 PM - 4 AM)</li>
+            <li>Early morning hours (2-5 AM) show lowest frequency but higher severity</li>
+            <li>Weekend patterns differ significantly from weekday patterns</li>
+        </ul>
+    </div>
+
+    <h3>2. Weather Impact Analysis</h3>
+    <img src="weather_casualties.png" alt="Weather Analysis" style="width: 50%; display: block; margin: 0 auto;">
+    <div class="findings">
+        <h4>Key Findings:</h4>
+        <ul>
+            <li>Adverse weather conditions significantly impact accident severity</li>
+            <li>Rain is associated with increased accident frequency but lower average severity</li>
+            <li>Snow and ice show lower frequency but higher severity rates</li>
+            <li>Clear weather accounts for majority of accidents due to higher traffic volume</li>
+        </ul>
+    </div>
+
+    <h3>3. Road and Speed Analysis</h3>
+    <img src="road_severity_heatmap.png" alt="Road Type Analysis" style="width: 50%; display: block; margin: 0 auto;">
+    <img src="speed_severity.png" alt="Speed Analysis" style="width: 50%; display: block; margin: 0 auto;">
+    <div class="findings">
+        <h4>Critical Insights:</h4>
+        <ul>
+            <li>Single carriageways account for highest number of accidents</li>
+            <li>Higher speed limits correlate strongly with increased severity</li>
+            <li>Urban roads show higher frequency but lower severity patterns</li>
+            <li>Motorways show relatively low accident rates despite high speeds</li>
+        </ul>
+    </div>
+
+    <h3>4. Casualty Analysis</h3>
+    <img src="casualty_analysis.png" alt="Casualty Analysis" style="width: 50%; display: block; margin: 0 auto;">
+    <div class="findings">
+        <h4>Demographic Patterns:</h4>
+        <ul>
+            <li>Young adults (18-25) show higher representation in accidents</li>
+            <li>Elderly casualties (65+) show higher severity rates</li>
+            <li>Pedestrian casualties show distinct age distribution patterns</li>
+            <li>Cyclist casualties concentrate in urban areas and peak commuting times</li>
+        </ul>
+    </div>
+
+    <h3>5. Vehicle Type Analysis</h3>
+    <img src="vehicle_types.png" alt="Vehicle Analysis" style="width: 50%; display: block; margin: 0 auto;">
+    <div class="findings">
+        <h4>Vehicle-Specific Patterns:</h4>
+        <ul>
+            <li>Cars represent the majority of vehicles involved</li>
+            <li>Motorcycles show disproportionately high severity rates</li>
+            <li>Heavy goods vehicles involved in fewer but more severe accidents</li>
+            <li>Public transport shows lower involvement rates</li>
+        </ul>
+    </div>
+
+    <h3>6. Age Distribution Analysis</h3>
+    <img src="age_distribution.png" alt="Age Distribution Analysis" style="width: 50%; display: block; margin: 0 auto;">
+    <div class="findings">
+        <h4>Age-Related Patterns:</h4>
+        <ul>
+            <li>Young adults (17-25) show highest accident involvement</li>
+            <li>Severity rates increase with age groups</li>
+            <li>Children under 16 show distinct accident patterns</li>
+            <li>Middle-aged groups show more moderate risk levels</li>
+        </ul>
+    </div>
 </div>
 <!------>
 <div id="visualizations" class="section">
@@ -1201,6 +1133,7 @@
         </ol>
     </div>
 
+<!-- Previous sections remain unchanged until after Expected Impact -->
 
             <div class="findings">
                 <h3>Expected Impact</h3>
