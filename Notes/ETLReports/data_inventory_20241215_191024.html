@@ -1,0 +1,446 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Data Inventory Report</title>
+        <style>
+            
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .summary-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .folder-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        .file-section {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        .error {
+            color: #dc3545;
+            padding: 10px;
+            background-color: #f8d7da;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .stat-item {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .column-list {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            columns: 3;
+            margin: 10px 0;
+        }
+        .column-list li {
+            margin: 5px 0;
+            break-inside: avoid;
+        }
+    
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Data Inventory Report</h1>
+            <div class="summary-box">
+                <h2>Overview</h2>
+                <p>Generated: 2024-12-15 19:10:22</p>
+                <p>Root Folder: Cleaned_Data</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <strong>Total Folders</strong>
+                        <p>3</p>
+                    </div>
+                    <div class="stat-item">
+                        <strong>Total Files</strong>
+                        <p>12</p>
+                    </div>
+                    <div class="stat-item">
+                        <strong>Total Size</strong>
+                        <p>162.50 MB</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="folder-section">
+                <h2>📁 Accidents</h2>
+        
+                    <div class="file-section">
+                        <h3>📄 Accidents_2015_cleaned_20241215_184456.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>140,056</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>32</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>18.81 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:44:57</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Location_Easting_OSGR</li><li>Location_Northing_OSGR</li><li>Longitude</li><li>Latitude</li><li>Police_Force</li><li>Accident_Severity</li><li>Number_of_Vehicles</li><li>Number_of_Casualties</li><li>Date</li><li>Day_of_Week</li><li>Time</li><li>Local_Authority_(District)</li><li>Local_Authority_(Highway)</li><li>1st_Road_Class</li><li>1st_Road_Number</li><li>Road_Type</li><li>Speed_limit</li><li>Junction_Detail</li><li>Junction_Control</li><li>2nd_Road_Class</li><li>2nd_Road_Number</li><li>Pedestrian_Crossing-Human_Control</li><li>Pedestrian_Crossing-Physical_Facilities</li><li>Light_Conditions</li><li>Weather_Conditions</li><li>Road_Surface_Conditions</li><li>Special_Conditions_at_Site</li><li>Carriageway_Hazards</li><li>Urban_or_Rural_Area</li><li>Did_Police_Officer_Attend_Scene_of_Accident</li><li>LSOA_of_Accident_Location</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Accidents_2016_cleaned_20241215_184458.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>136,621</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>32</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>18.69 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:44:59</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Location_Easting_OSGR</li><li>Location_Northing_OSGR</li><li>Longitude</li><li>Latitude</li><li>Police_Force</li><li>Accident_Severity</li><li>Number_of_Vehicles</li><li>Number_of_Casualties</li><li>Date</li><li>Day_of_Week</li><li>Time</li><li>Local_Authority_(District)</li><li>Local_Authority_(Highway)</li><li>1st_Road_Class</li><li>1st_Road_Number</li><li>Road_Type</li><li>Speed_limit</li><li>Junction_Detail</li><li>Junction_Control</li><li>2nd_Road_Class</li><li>2nd_Road_Number</li><li>Pedestrian_Crossing-Human_Control</li><li>Pedestrian_Crossing-Physical_Facilities</li><li>Light_Conditions</li><li>Weather_Conditions</li><li>Road_Surface_Conditions</li><li>Special_Conditions_at_Site</li><li>Carriageway_Hazards</li><li>Urban_or_Rural_Area</li><li>Did_Police_Officer_Attend_Scene_of_Accident</li><li>LSOA_of_Accident_Location</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Accidents_2017_cleaned_20241215_184500.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>129,982</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>32</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>17.24 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:00</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Location_Easting_OSGR</li><li>Location_Northing_OSGR</li><li>Longitude</li><li>Latitude</li><li>Police_Force</li><li>Accident_Severity</li><li>Number_of_Vehicles</li><li>Number_of_Casualties</li><li>Date</li><li>Day_of_Week</li><li>Time</li><li>Local_Authority_(District)</li><li>Local_Authority_(Highway)</li><li>1st_Road_Class</li><li>1st_Road_Number</li><li>Road_Type</li><li>Speed_limit</li><li>Junction_Detail</li><li>Junction_Control</li><li>2nd_Road_Class</li><li>2nd_Road_Number</li><li>Pedestrian_Crossing-Human_Control</li><li>Pedestrian_Crossing-Physical_Facilities</li><li>Light_Conditions</li><li>Weather_Conditions</li><li>Road_Surface_Conditions</li><li>Special_Conditions_at_Site</li><li>Carriageway_Hazards</li><li>Urban_or_Rural_Area</li><li>Did_Police_Officer_Attend_Scene_of_Accident</li><li>LSOA_of_Accident_Location</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Accidents_2018_cleaned_20241215_184501.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>122,635</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>32</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>16.44 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:02</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Location_Easting_OSGR</li><li>Location_Northing_OSGR</li><li>Longitude</li><li>Latitude</li><li>Police_Force</li><li>Accident_Severity</li><li>Number_of_Vehicles</li><li>Number_of_Casualties</li><li>Date</li><li>Day_of_Week</li><li>Time</li><li>Local_Authority_(District)</li><li>Local_Authority_(Highway)</li><li>1st_Road_Class</li><li>1st_Road_Number</li><li>Road_Type</li><li>Speed_limit</li><li>Junction_Detail</li><li>Junction_Control</li><li>2nd_Road_Class</li><li>2nd_Road_Number</li><li>Pedestrian_Crossing-Human_Control</li><li>Pedestrian_Crossing-Physical_Facilities</li><li>Light_Conditions</li><li>Weather_Conditions</li><li>Road_Surface_Conditions</li><li>Special_Conditions_at_Site</li><li>Carriageway_Hazards</li><li>Urban_or_Rural_Area</li><li>Did_Police_Officer_Attend_Scene_of_Accident</li><li>LSOA_of_Accident_Location</li>
+                        </ul>
+                    </div>
+                
+            </div>
+        
+            <div class="folder-section">
+                <h2>📁 Casualties</h2>
+        
+                    <div class="file-section">
+                        <h3>📄 Casualties_2015_cleaned_20241215_184502.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>186,189</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>16</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>8.26 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:02</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Vehicle_Reference</li><li>Casualty_Reference</li><li>Casualty_Class</li><li>Sex_of_Casualty</li><li>Age_of_Casualty</li><li>Age_Band_of_Casualty</li><li>Casualty_Severity</li><li>Pedestrian_Location</li><li>Pedestrian_Movement</li><li>Car_Passenger</li><li>Bus_or_Coach_Passenger</li><li>Pedestrian_Road_Maintenance_Worker</li><li>Casualty_Type</li><li>Casualty_Home_Area_Type</li><li>Casualty_IMD_Decile</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Casualties_2017_cleaned_20241215_184503.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>170,993</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>16</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>7.43 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:03</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Vehicle_Reference</li><li>Casualty_Reference</li><li>Casualty_Class</li><li>Sex_of_Casualty</li><li>Age_of_Casualty</li><li>Age_Band_of_Casualty</li><li>Casualty_Severity</li><li>Pedestrian_Location</li><li>Pedestrian_Movement</li><li>Car_Passenger</li><li>Bus_or_Coach_Passenger</li><li>Pedestrian_Road_Maintenance_Worker</li><li>Casualty_Type</li><li>Casualty_Home_Area_Type</li><li>Casualty_IMD_Decile</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Casualties_2018_cleaned_20241215_184503.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>160,597</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>16</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>7.12 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:04</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Vehicle_Reference</li><li>Casualty_Reference</li><li>Casualty_Class</li><li>Sex_of_Casualty</li><li>Age_of_Casualty</li><li>Age_Band_of_Casualty</li><li>Casualty_Severity</li><li>Pedestrian_Location</li><li>Pedestrian_Movement</li><li>Car_Passenger</li><li>Bus_or_Coach_Passenger</li><li>Pedestrian_Road_Maintenance_Worker</li><li>Casualty_Type</li><li>Casualty_Home_Area_Type</li><li>Casualty_IMD_Decile</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Causalties_2016_cleaned_20241215_184504.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>181,384</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>16</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>8.05 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:04</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Vehicle_Reference</li><li>Casualty_Reference</li><li>Casualty_Class</li><li>Sex_of_Casualty</li><li>Age_of_Casualty</li><li>Age_Band_of_Casualty</li><li>Casualty_Severity</li><li>Pedestrian_Location</li><li>Pedestrian_Movement</li><li>Car_Passenger</li><li>Bus_or_Coach_Passenger</li><li>Pedestrian_Road_Maintenance_Worker</li><li>Casualty_Type</li><li>Casualty_Home_Area_Type</li><li>Casualty_IMD_Decile</li>
+                        </ul>
+                    </div>
+                
+            </div>
+        
+            <div class="folder-section">
+                <h2>📁 Vehicles</h2>
+        
+                    <div class="file-section">
+                        <h3>📄 Vehicles_2015_cleaned_20241215_184505.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>257,845</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>23</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>16.32 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:06</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Vehicle_Reference</li><li>Vehicle_Type</li><li>Towing_and_Articulation</li><li>Vehicle_Manoeuvre</li><li>Vehicle_Location-Restricted_Lane</li><li>Junction_Location</li><li>Skidding_and_Overturning</li><li>Hit_Object_in_Carriageway</li><li>Vehicle_Leaving_Carriageway</li><li>Hit_Object_off_Carriageway</li><li>1st_Point_of_Impact</li><li>Was_Vehicle_Left_Hand_Drive?</li><li>Journey_Purpose_of_Driver</li><li>Sex_of_Driver</li><li>Age_of_Driver</li><li>Age_Band_of_Driver</li><li>Engine_Capacity_(CC)</li><li>Propulsion_Code</li><li>Age_of_Vehicle</li><li>Driver_IMD_Decile</li><li>Driver_Home_Area_Type</li><li>Vehicle_IMD_Decile</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Vehicles_2016_cleaned_20241215_184216.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>252,500</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>23</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>15.67 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:42:17</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Vehicle_Reference</li><li>Vehicle_Type</li><li>Towing_and_Articulation</li><li>Vehicle_Manoeuvre</li><li>Vehicle_Location-Restricted_Lane</li><li>Junction_Location</li><li>Skidding_and_Overturning</li><li>Hit_Object_in_Carriageway</li><li>Vehicle_Leaving_Carriageway</li><li>Hit_Object_off_Carriageway</li><li>1st_Point_of_Impact</li><li>Was_Vehicle_Left_Hand_Drive?</li><li>Journey_Purpose_of_Driver</li><li>Sex_of_Driver</li><li>Age_of_Driver</li><li>Age_Band_of_Driver</li><li>Engine_Capacity_(CC)</li><li>Propulsion_Code</li><li>Age_of_Vehicle</li><li>Driver_IMD_Decile</li><li>Driver_Home_Area_Type</li><li>Vehicle_IMD_Decile</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Vehicles_2017_cleaned_20241215_184507.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>238,926</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>23</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>14.54 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:08</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Vehicle_Reference</li><li>Vehicle_Type</li><li>Towing_and_Articulation</li><li>Vehicle_Manoeuvre</li><li>Vehicle_Location-Restricted_Lane</li><li>Junction_Location</li><li>Skidding_and_Overturning</li><li>Hit_Object_in_Carriageway</li><li>Vehicle_Leaving_Carriageway</li><li>Hit_Object_off_Carriageway</li><li>1st_Point_of_Impact</li><li>Was_Vehicle_Left_Hand_Drive?</li><li>Journey_Purpose_of_Driver</li><li>Sex_of_Driver</li><li>Age_of_Driver</li><li>Age_Band_of_Driver</li><li>Engine_Capacity_(CC)</li><li>Propulsion_Code</li><li>Age_of_Vehicle</li><li>Driver_IMD_Decile</li><li>Driver_Home_Area_Type</li><li>Vehicle_IMD_Decile</li>
+                        </ul>
+                    </div>
+                
+                    <div class="file-section">
+                        <h3>📄 Vehicles_2018_cleaned_20241215_184509.csv</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <strong>Rows</strong>
+                                <p>226,409</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Columns</strong>
+                                <p>23</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Size</strong>
+                                <p>13.93 MB</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Last Modified</strong>
+                                <p>2024-12-15 18:45:09</p>
+                            </div>
+                        </div>
+                        <h4>Columns:</h4>
+                        <ul class="column-list">
+                            <li>Accident_Index</li><li>Vehicle_Reference</li><li>Vehicle_Type</li><li>Towing_and_Articulation</li><li>Vehicle_Manoeuvre</li><li>Vehicle_Location-Restricted_Lane</li><li>Junction_Location</li><li>Skidding_and_Overturning</li><li>Hit_Object_in_Carriageway</li><li>Vehicle_Leaving_Carriageway</li><li>Hit_Object_off_Carriageway</li><li>1st_Point_of_Impact</li><li>Was_Vehicle_Left_Hand_Drive?</li><li>Journey_Purpose_of_Driver</li><li>Sex_of_Driver</li><li>Age_of_Driver</li><li>Age_Band_of_Driver</li><li>Engine_Capacity_(CC)</li><li>Propulsion_Code</li><li>Age_of_Vehicle</li><li>Driver_IMD_Decile</li><li>Driver_Home_Area_Type</li><li>Vehicle_IMD_Decile</li>
+                        </ul>
+                    </div>
+                
+            </div>
+        
+        </div>
+    </body>
+    </html>
+    

@@ -12,17 +12,16 @@
             padding-top: 60px;
             background-color: #f8f9fa;
         }
-        
-        .nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            padding: 15px 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
         
         .content {
             max-width: 1200px;
@@ -166,15 +165,59 @@
         background-color: #f5f5f5;
     }
     
-         .grid-container {
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-gap: 10px;
-        }
-
-        .grid-item {
-            text-align: center;
-        }
+        .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.grid-item {
+    position: relative;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.grid-item:hover {
+    z-index: 100;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 4/3;
+}
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.grid-item:hover img {
+    transform: scale(1.5);
+}
+.title {
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    color: #333;
+    padding: 5px;
+    background: white;
+    position: relative;
+    z-index: 2;
+}
   .tableau-container {
         width: 100%;
         height: 100vh;  /* Full viewport height */
@@ -189,18 +232,93 @@
         padding: 0;
     }
         
+        .etl-grid-container { 
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 20px; 
+        margin-top: 20px; 
+    }
+
+    .etl-grid-item { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .etl-grid-image { 
+        width: 100%; 
+        height: auto; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+        transition: transform 0.3s ease; 
+    }
+
+    .etl-grid-image:hover { 
+        transform: scale(1.05); 
+    }
+
+    .etl-image-caption { 
+        text-align: center; 
+        margin-top: 10px; 
+        font-size: 0.9em; 
+        color: #666; 
+    }
+
+    .technical-notes-list { 
+        margin-bottom: 20px; 
+    }
+
+    .technical-notes-list ul { 
+        list-style-type: disc; 
+        padding-left: 20px; 
+    }
+
+    .technical-notes-list li { 
+        margin-bottom: 8px; 
+    } 
+        .banner-image {
+    margin-top: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
     </style>
 </head>
 <body>
-    <nav class="nav-bar">
-        <div class="nav-links">
-            <a href="#introduction" class="nav-link">Introduction</a>
-            <a href="#methodology" class="nav-link">Methodology</a>
-            <a href="#findings" class="nav-link">Findings</a>
-            <a href="#conclusion" class="nav-link">Conclusion</a>
-        </div>
-    </nav>
-
+  <nav class="nav-bar">
+     <div class="nav-links" style="text-align: center; margin-bottom: 15px;">
+        <h1 style="color: white; margin: 0 0 10px 0; font-size: 1.5em;">UK Traffic Accident Analysis (2015-2018)</h1>
+    </div>
+    <div class="nav-links">
+        <a href="#introduction" class="nav-link">Introduction</a>
+        <a href="#etl-process" class="nav-link">ETL Process</a>
+        <a href="#data-documentation" class="nav-link">Data Documentation</a>
+        <a href="#findings" class="nav-link"> Analysis</a>
+        <a href="#visualizations" class="nav-link"> Visualizations</a>
+        <a href="#Tableau" class="nav-link"> Tableau</a>
+        <a href="#conclusion" class="nav-link">Conclusions</a>
+    </div>
+    <div class="nav-links" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 10px; padding-top: 10px;">
+        <span style="color: white; font-size: 0.9em;">
+            Project by Wolfrank Guzman 
+            <a href="https://github.com/guzmanwolfrank" class="nav-link" style="display: inline-block; padding: 5px 10px;">github:guzmanwolfrank</a>
+            <a href="https://wolfrankguzman.com" class="nav-link" style="display: inline-block; padding: 5px 10px;">website:wolfrankguzman.com</a>
+        </span>
+    </div>
+</nav>
+<!-- Banner Image -->
+<div class="banner-image" style="margin-top: 100px; width: 100%; text-align: center;">
+    <img src="/Data/Output/ukstudy.png" 
+         alt="UK Traffic Study Banner" 
+         style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</div>
     <div class="content">
     <div id="introduction" class="intro">
     <h1>UK Traffic Accident Analysis (2015-2018)</h1>
@@ -219,30 +337,305 @@
         <li>Develop evidence-based safety recommendations</li>
     </ul>
 </div>
-
-        <div id="methodology" class="section">
-            <h2>Methodology and Data Overview</h2>
-            <div class="stats-container">
-                <div class="stat-card">
-                    <div class="stat-value">529,294</div>
-                    <div>Total Accidents</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">6,658</div>
-                    <div>Fatal Accidents</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">87,462</div>
-                    <div>Serious Accidents</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">435,174</div>
-                    <div>Slight Accidents</div>
-                </div>
-            </div>
-            <p>This analysis utilizes comprehensive accident data from 2015 to 2018, incorporating multiple data sources to provide a holistic view of road safety incidents.</p>
+<!--------------->
+<div id="etl-process" class="section">
+    <h2>ETL Process</h2>
+    
+    <p>A comprehensive ETL process was performed on road safety data spanning multiple years, focusing on three main datasets: Accidents, Casualties, and Vehicles. The process included data validation, standardization, and consolidation, with particular attention to date/time format standardization from UK to US formats.</p>
+    
+    <h3>Detailed ETL Process</h3>
+    
+    <div class="findings">
+        <h4>1. Data Validation and Structure Assessment</h4>
+        <ul>
+            <li>Performed initial data comparison between redundant 2015 datasets to ensure data integrity</li>
+            <li>Validated matching data between Data\RoadSafetyData_2015 and organized folder structure</li>
+            <li>Confirmed 100% match for Accidents, Casualties, and Vehicles datasets</li>
+            <li>Decision made to remove redundant 2015 folder after validation</li>
+        </ul>
+    </div>
+    
+    <div class="findings">
+        <h4>2. File Structure Standardization</h4>
+        <p>Implemented consistent naming convention across all datasets:</p>
+        <ul>
+            <li>Renamed 2017 accident files from "ACC" to "Accidents_2017"</li>
+            <li>Standardized Casualties files naming convention across years</li>
+            <li>Updated Vehicles files from "Veh.csv" to standardized naming format</li>
+            <li>Organized files into appropriate report type directories</li>
+        </ul>
+    </div>
+    
+    <div class="findings">
+        <h4>3. Data Transformation</h4>
+        <p><strong>Date/Time Format Standardization</strong></p>
+        <ul>
+            <li>Converted all timestamps from UK to US format</li>
+            <li>Resolved secondary time format issues related to hours and minutes</li>
+            <li>Implemented additional validation checks for datetime consistency</li>
+        </ul>
+    </div>
+    
+    <div class="findings">
+        <h4>4. Data Cleaning</h4>
+        <p>Executed custom data cleaning script to handle:</p>
+        <ul>
+            <li>Data standardization</li>
+            <li>Error correction</li>
+            <li>Format consistency</li>
+            <li>Generated comprehensive data cleaning report using custom Python code</li>
+        </ul>
+    </div>
+    
+    <div class="findings">
+        <h4>5. Data Consolidation</h4>
+        <p>Combined cleaned datasets into three main categories:</p>
+        <ul>
+            <li>Accidents master file</li>
+            <li>Casualties master file</li>
+            <li>Vehicles master file</li>
+        </ul>
+    </div>
+    
+   <div id="etl-process" class="section">
+    <div class="findings">
+        <h4>Technical Notes</h4>
+        <div class="technical-notes-list">
+            <p><strong>Primary challenge areas addressed:</strong></p>
+            <ul>
+                <li>Date/time format standardization</li>
+                <li>File organization and naming conventions</li>
+                <li>Data validation and verification</li>
+            </ul>
+            
+            <p><strong>Custom Python scripts were developed for:</strong></p>
+            <ul>
+                <li>Data comparison and validation</li>
+                <li>Cleaning operations</li>
+                <li>Report generation</li>
+                <li>Data consolidation</li>
+            </ul>
         </div>
-        <div id="data-dictionary" class="section">
+
+        <div class="etl-grid-container">
+            <div class="etl-grid-item">
+                <img class="etl-grid-image" 
+                     src="/Notes/ETLReports/2015accidentscomparisonreport.png" 
+                     alt="2015 Accidents Comparison Report">
+                <p class="etl-image-caption">Accidents Comparison Report</p>
+            </div>
+            
+            <div class="etl-grid-item">
+                <img class="etl-grid-image" 
+                     src="/Notes/ETLReports/2015Casualtiescomparisonreport.png" 
+                     alt="2015 Casualties Comparison Report">
+                <p class="etl-image-caption">Casualties Comparison Report</p>
+            </div>
+            
+            <div class="etl-grid-item">
+                <img class="etl-grid-image" 
+                     src="/Notes/ETLReports/2015Vehiclescomparisonreport.png" 
+                     alt="2015 Vehicles Comparison Report">
+                <p class="etl-image-caption">Vehicles Comparison Report</p>
+            </div>
+            
+            <div class="etl-grid-item">
+                <img class="etl-grid-image" 
+                     src="/Notes/ETLReports/CleaningReport.png" 
+                     alt="Python Folder Reader and CSV Cleaning Program">
+                <p class="etl-image-caption">Python Folder Reader and CSV Cleaning Program</p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div class="findings">
+        <h4>Process Timeline</h4>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div>12:52</div>
+                <div>Initial date format standardization</div>
+            </div>
+            <div class="stat-card">
+                <div>14:11</div>
+                <div>Data validation of 2015 datasets</div>
+            </div>
+            <div class="stat-card">
+                <div>14:29</div>
+                <div>Folder structure optimization</div>
+            </div>
+            <div class="stat-card">
+                <div>14:41</div>
+                <div>File renaming and organization</div>
+            </div>
+            <div class="stat-card">
+                <div>15:18</div>
+                <div>UK to US time format conversion</div>
+            </div>
+            <div class="stat-card">
+                <div>15:43</div>
+                <div>Implementation of data cleaning</div>
+            </div>
+            <div class="stat-card">
+                <div>16:24</div>
+                <div>Data consolidation</div>
+            </div>
+            <div class="stat-card">
+                <div>16:49</div>
+                <div>Final datetime format resolution</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----------------->
+
+<div id="data-documentation" class="section">
+  
+
+    <h2>Data Legend</h2>
+    
+    <div class="dictionary-section">
+        <h3>Accident Severity</h3>
+        <div class="table-wrapper">
+            <table class="dictionary-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Fatal</td></tr>
+                    <tr><td>2</td><td>Serious</td></tr>
+                    <tr><td>3</td><td>Slight</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Weather Conditions</h3>
+        <div class="table-wrapper">
+            <table class="dictionary-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Fine no high winds</td></tr>
+                    <tr><td>2</td><td>Raining no high winds</td></tr>
+                    <tr><td>3</td><td>Snowing no high winds</td></tr>
+                    <tr><td>4</td><td>Fine + high winds</td></tr>
+                    <tr><td>5</td><td>Raining + high winds</td></tr>
+                    <tr><td>6</td><td>Snowing + high winds</td></tr>
+                    <tr><td>7</td><td>Fog or mist</td></tr>
+                    <tr><td>8</td><td>Other</td></tr>
+                    <tr><td>9</td><td>Unknown</td></tr>
+                    <tr><td>-1</td><td>Data missing or out of range</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Road Type</h3>
+        <div class="table-wrapper">
+            <table class="dictionary-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Roundabout</td></tr>
+                    <tr><td>2</td><td>One way street</td></tr>
+                    <tr><td>3</td><td>Dual carriageway</td></tr>
+                    <tr><td>6</td><td>Single carriageway</td></tr>
+                    <tr><td>7</td><td>Slip road</td></tr>
+                    <tr><td>9</td><td>Unknown</td></tr>
+                    <tr><td>12</td><td>One way street/Slip road</td></tr>
+                    <tr><td>-1</td><td>Data missing or out of range</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Casualty Type</h3>
+        <div class="table-wrapper">
+            <table class="dictionary-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>Pedestrian</td></tr>
+                    <tr><td>1</td><td>Cyclist</td></tr>
+                    <tr><td>2</td><td>Motorcycle 50cc and under rider or passenger</td></tr>
+                    <tr><td>3</td><td>Motorcycle 125cc and under rider or passenger</td></tr>
+                    <tr><td>4</td><td>Motorcycle over 125cc and up to 500cc rider or passenger</td></tr>
+                    <tr><td>5</td><td>Motorcycle over 500cc rider or passenger</td></tr>
+                    <tr><td>8</td><td>Taxi/Private hire car occupant</td></tr>
+                    <tr><td>9</td><td>Car occupant</td></tr>
+                    <tr><td>10</td><td>Minibus (8 - 16 passenger seats) occupant</td></tr>
+                    <tr><td>11</td><td>Bus or coach occupant (17 or more pass seats)</td></tr>
+                    <tr><td>16</td><td>Horse rider</td></tr>
+                    <tr><td>17</td><td>Agricultural vehicle occupant</td></tr>
+                    <tr><td>18</td><td>Tram occupant</td></tr>
+                    <tr><td>19</td><td>Van / Goods vehicle (3.5 tonnes mgw or under) occupant</td></tr>
+                    <tr><td>20</td><td>Goods vehicle (over 3.5t. and under 7.5t.) occupant</td></tr>
+                    <tr><td>21</td><td>Goods vehicle (7.5 tonnes mgw and over) occupant</td></tr>
+                    <tr><td>22</td><td>Mobility scooter rider</td></tr>
+                    <tr><td>23</td><td>Electric motorcycle rider or passenger</td></tr>
+                    <tr><td>90</td><td>Other vehicle occupant</td></tr>
+                    <tr><td>97</td><td>Motorcycle - unknown cc rider or passenger</td></tr>
+                    <tr><td>98</td><td>Goods vehicle (unknown weight) occupant</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Vehicle Type</h3>
+        <div class="table-wrapper">
+            <table class="dictionary-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Pedal cycle</td></tr>
+                    <tr><td>2</td><td>Motorcycle 50cc and under</td></tr>
+                    <tr><td>3</td><td>Motorcycle 125cc and under</td></tr>
+                    <tr><td>4</td><td>Motorcycle over 125cc and up to 500cc</td></tr>
+                    <tr><td>5</td><td>Motorcycle over 500cc</td></tr>
+                    <tr><td>8</td><td>Taxi/Private hire car</td></tr>
+                    <tr><td>9</td><td>Car</td></tr>
+                    <tr><td>10</td><td>Minibus (8 - 16 passenger seats)</td></tr>
+                    <tr><td>11</td><td>Bus or coach (17 or more pass seats)</td></tr>
+                    <tr><td>16</td><td>Ridden horse</td></tr>
+                    <tr><td>17</td><td>Agricultural vehicle</td></tr>
+                    <tr><td>18</td><td>Tram</td></tr>
+                    <tr><td>19</td><td>Van / Goods 3.5 tonnes mgw or under</td></tr>
+                    <tr><td>20</td><td>Goods over 3.5t. and under 7.5t</td></tr>
+                    <tr><td>21</td><td>Goods 7.5 tonnes mgw and over</td></tr>
+                    <tr><td>22</td><td>Mobility scooter</td></tr>
+                    <tr><td>23</td><td>Electric motorcycle</td></tr>
+                    <tr><td>90</td><td>Other vehicle</td></tr>
+                    <tr><td>97</td><td>Motorcycle - unknown cc</td></tr>
+                    <tr><td>98</td><td>Goods vehicle - unknown weight</td></tr>
+                    <tr><td>-1</td><td>Data missing or out of range</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+        
+        
+        
     <h2>Data Dictionary</h2>
     
     <div class="dictionary-section">
@@ -409,7 +802,31 @@
         </div>
     </div>
 </div>
-
+<!----------------->
+        <div id="methodology" class="section">
+            <h2>Methodology and Data Overview</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-value">529,294</div>
+                    <div>Total Accidents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">6,658</div>
+                    <div>Fatal Accidents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">87,462</div>
+                    <div>Serious Accidents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">435,174</div>
+                    <div>Slight Accidents</div>
+                </div>
+            </div>
+            <p>This analysis utilizes comprehensive accident data from 2015 to 2018, incorporating multiple data sources to provide a holistic view of road safety incidents.</p>
+        </div>
+        <div id="data-dictionary" class="section">
+<!------------------>
         <div id="findings" class="section">
             <h2>Detailed Analysis and Findings</h2>
             
@@ -487,7 +904,8 @@
     
 </div>
 <!------>
-  <div><h1> Accident Correlations </h1></div>
+<div id="visualizations" class="section">
+  <div><h1> Accident Visualizations </h1></div>
 
   <div class="grid-container">
         <div class="grid-item">
@@ -529,7 +947,7 @@
     </div>
 
 <!-Tableau---->
-     <div class="section">
+<div id="Tableau" class="section">
             <h2>Tableau: Interactive Visualization</h2>
             
             <!-- First Tableau Dashboard -->
@@ -611,57 +1029,132 @@
 </div>
 <!----->
 
-        <div id="conclusion" class="section">
-            <h2>Conclusions and Recommendations</h2>
-            
+       <div id="conclusion" class="section">
+    <h2>Conclusions and Recommendations</h2>
+    
+    <div class="findings">
+        <h3>Statistical Overview</h3>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value">529,294</div>
+                <div>Total Accidents Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">6,658</div>
+                <div>Fatal Accidents</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">87,462</div>
+                <div>Serious Accidents</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">435,174</div>
+                <div>Slight Accidents</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="findings">
+        <h3>Key Vulnerable Road User Groups</h3>
+        <ul>
+            <li><strong>Pedestrians</strong>
+                <ul>
+                    <li>Highest risk during urban rush hours</li>
+                    <li>Children and elderly most vulnerable</li>
+                    <li>Poor visibility in dark conditions increases risk</li>
+                    <li>Crossing points are critical incident locations</li>
+                </ul>
+            </li>
+            <li><strong>Cyclists</strong>
+                <ul>
+                    <li>Urban intersection conflicts predominate</li>
+                    <li>Limited visibility during peak hours</li>
+                    <li>Lack of dedicated infrastructure</li>
+                    <li>Vehicle-cyclist awareness gaps</li>
+                </ul>
+            </li>
+            <li><strong>Young Drivers (17-25)</strong>
+                <ul>
+                    <li>Inexperience in complex traffic situations</li>
+                    <li>Night driving risks</li>
+                    <li>Peer pressure and distraction</li>
+                    <li>Speed-related incidents</li>
+                </ul>
+            </li>
+            <li><strong>Elderly Road Users</strong>
+                <ul>
+                    <li>Higher severity rates in accidents</li>
+                    <li>Reduced reaction times</li>
+                    <li>Medical conditions affecting driving</li>
+                    <li>Difficulty with complex junctions</li>
+                </ul>
+            </li>
+            <li><strong>Motorcyclists</strong>
+                <ul>
+                    <li>High severity rates in accidents</li>
+                    <li>Vulnerability in poor weather</li>
+                    <li>Junction collision risks</li>
+                    <li>Speed-related incidents</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="findings">
+        <h3>Recommended Solutions</h3>
+        <ol>
+            <li><strong>Smart Infrastructure Implementation</strong> (15-20% potential reduction in urban accidents)
+                <ul>
+                    <li>AI-powered traffic management systems</li>
+                    <li>Dynamic speed limits based on conditions</li>
+                    <li>Connected vehicle infrastructure</li>
+                </ul>
+            </li>
+            <li><strong>Enhanced Education Programs</strong> (10-15% potential reduction)
+                <ul>
+                    <li>Continuous learning systems</li>
+                    <li>Virtual reality hazard training</li>
+                    <li>Vulnerable user awareness training</li>
+                </ul>
+            </li>
+            <li><strong>Technology-Based Solutions</strong> (20-25% potential reduction)
+                <ul>
+                    <li>Advanced driver assistance systems</li>
+                    <li>Vehicle-to-vehicle communication</li>
+                    <li>Automated emergency braking</li>
+                </ul>
+            </li>
+            <li><strong>Time-Based Interventions</strong> (15-20% potential reduction)
+                <ul>
+                    <li>Rush hour management</li>
+                    <li>School zone programs</li>
+                    <li>Night-time safety measures</li>
+                </ul>
+            </li>
+            <li><strong>Road Design Improvements</strong> (25-30% potential reduction)
+                <ul>
+                    <li>Segregated lanes</li>
+                    <li>Junction redesigns</li>
+                    <li>Enhanced surface materials</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+<!-- Previous sections remain unchanged until after Expected Impact -->
+
             <div class="findings">
-                <h3>Primary Conclusions:</h3>
-                <ol>
-                    <li><strong>Temporal Factors</strong>
-                        <ul>
-                            <li>Rush hour periods require enhanced traffic management</li>
-                            <li>Night driving presents significantly higher risks</li>
-                            <li>Seasonal patterns affect accident likelihood</li>
-                        </ul>
-                    </li>
-                    
-                    <li><strong>Environmental Impact</strong>
-                        <ul>
-                            <li>Weather conditions are crucial risk factors</li>
-                            <li>Road type and condition significantly influence outcomes</li>
-                            <li>Light conditions play a vital role in accident severity</li>
-                        </ul>
-                    </li>
-                    
-                    <li><strong>Human Factors</strong>
-                        <ul>
-                            <li>Age and experience significantly impact risk levels</li>
-                            <li>Different road user types show distinct risk patterns</li>
-                            <li>Time of travel affects risk exposure</li>
-                        </ul>
-                    </li>
-                </ol>
+                <h3>Expected Impact</h3>
+                <p>Through this comprehensive approach, combining technology, education, and infrastructure improvements, we project a potential reduction in overall accident rates by 30-40% over a five-year period. Success will require substantial government investment, public-private partnerships, and continuous monitoring and adaptation of strategies.</p>
             </div>
 
             <div class="findings">
-                <h3>Recommendations:</h3>
-                <ul>
-                    <li>Implement targeted safety measures during high-risk periods</li>
-                    <li>Enhance infrastructure in identified high-risk areas</li>
-                    <li>Develop specific safety campaigns for vulnerable groups</li>
-                    <li>Improve weather-related warning systems</li>
-                    <li>Review speed limits in areas with high severity rates</li>
-                </ul>
-            </div>
+                <h3>Conclusion</h3>
+                <p>The comprehensive analysis of UK traffic accidents from 2015-2018 reveals a complex interplay between temporal, environmental, and human factors in road safety. The data demonstrates both predictable patterns, such as rush hour accident frequency, and counterintuitive insights, like the lower frequency but higher severity of nighttime accidents. Each vulnerable road user group shows distinct risk patterns requiring targeted interventions, from enhanced pedestrian crossing systems to advanced rider training programs for motorcyclists. The analysis particularly highlights the need for age-specific approaches, with young adults being most frequently involved in accidents while elderly road users face higher severity rates.</p>
 
-            <div class="findings">
-                <h3>Future Research Directions:</h3>
-                <ul>
-                    <li>Impact of emerging vehicle technologies on safety</li>
-                    <li>Detailed analysis of behavioral factors</li>
-                    <li>Effectiveness of various safety interventions</li>
-                    <li>Integration with real-time traffic and weather data</li>
-                </ul>
+                <p>The environmental and infrastructure findings underscore the critical role of road design and weather conditions in accident outcomes. The analysis supports the implementation of smart infrastructure solutions, including AI-powered traffic management systems, dynamic speed limits, and connected vehicle infrastructure. The data suggests that comprehensive solutions combining technology, education, and infrastructure improvements could potentially reduce overall accident rates by 30-40% over a five-year period. Key initiatives should include mandatory advanced driver assistance systems, enhanced driver education programs, and targeted time-based interventions for high-risk periods.</p>
+
+                <p>Looking forward, the study advocates for a multi-faceted approach to road safety improvement through five key areas: smart infrastructure implementation, enhanced driver education, technology-based safety systems, targeted time-based interventions, and comprehensive road design overhaul. Success requires substantial government investment, public-private partnerships, and community engagement, implemented through a phased approach over short-term (0-12 months), medium-term (1-3 years), and long-term (3-5 years) periods. This structured approach, combined with regular effectiveness monitoring and adaptation to new technologies, presents a viable pathway to significantly reducing both the frequency and severity of road accidents across the UK. The findings emphasize that while certain risk factors remain constant, the solutions must evolve with technology and changing traffic patterns to effectively address road safety challenges in the modern era.</p>
             </div>
         </div>
     </div>

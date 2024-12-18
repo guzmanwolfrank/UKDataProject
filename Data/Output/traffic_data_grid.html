@@ -1,0 +1,365 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UK Traffic Data Visualizations</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 20px;
+                background: #f0f0f0;
+                font-family: Arial, sans-serif;
+            }
+            
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .grid-item {
+        position: relative;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .grid-item:hover {
+        z-index: 100;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        aspect-ratio: 4/3;
+    }
+    .grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    .title {
+        font-size: 14px;
+        margin-top: 8px;
+        text-align: center;
+        color: #333;
+        padding: 5px;
+        background: white;
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        overflow: auto;
+        backdrop-filter: blur(5px);
+    }
+    
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 20px;
+        width: 90%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+     .modal-image {
+        max-width: 90%;
+        max-height: 80vh;
+        object-fit: contain;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+    
+    .modal.active .modal-image {
+        transform: scale(4);  /* Changed from scale(10) to scale(4) */
+        transition: transform 0.3s ease;
+    }
+    
+    .close {
+        position: fixed;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .modal-title {
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+    
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\age_distribution.png" alt="Age Distribution">
+                </div>
+                <div class="title">Age Distribution</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\age_severity.png" alt="Age Severity">
+                </div>
+                <div class="title">Age Severity</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\casualty_age.png" alt="Casualty Age">
+                </div>
+                <div class="title">Casualty Age</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\casualty_analysis.png" alt="Casualty Analysis">
+                </div>
+                <div class="title">Casualty Analysis</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\day_severity.png" alt="Day Severity">
+                </div>
+                <div class="title">Day Severity</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\driver_journey_age.png" alt="Driver Journey Age">
+                </div>
+                <div class="title">Driver Journey Age</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\hourly_distribution.png" alt="Hourly Distribution">
+                </div>
+                <div class="title">Hourly Distribution</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\light_conditions.png" alt="Light Conditions">
+                </div>
+                <div class="title">Light Conditions</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\monthly_severity_trends.png" alt="Monthly Severity Trends">
+                </div>
+                <div class="title">Monthly Severity Trends</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\monthly_trends.png" alt="Monthly Trends">
+                </div>
+                <div class="title">Monthly Trends</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\road_severity.png" alt="Road Severity">
+                </div>
+                <div class="title">Road Severity</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\road_severity_heatmap.png" alt="Road Severity Heatmap">
+                </div>
+                <div class="title">Road Severity Heatmap</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\severity_by_year.png" alt="Severity By Year">
+                </div>
+                <div class="title">Severity By Year</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\severity_heatmap.png" alt="Severity Heatmap">
+                </div>
+                <div class="title">Severity Heatmap</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\severity_pie.png" alt="Severity Pie">
+                </div>
+                <div class="title">Severity Pie</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\speed_severity.png" alt="Speed Severity">
+                </div>
+                <div class="title">Speed Severity</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\time_of_day.png" alt="Time Of Day">
+                </div>
+                <div class="title">Time Of Day</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\time_severity.png" alt="Time Severity">
+                </div>
+                <div class="title">Time Severity</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\ukstudy.png" alt="Ukstudy">
+                </div>
+                <div class="title">Ukstudy</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\urban_rural.png" alt="Urban Rural">
+                </div>
+                <div class="title">Urban Rural</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\vehicle_types.png" alt="Vehicle Types">
+                </div>
+                <div class="title">Vehicle Types</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\weather_casualties.png" alt="Weather Casualties">
+                </div>
+                <div class="title">Weather Casualties</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\weather_impact.png" alt="Weather Impact">
+                </div>
+                <div class="title">Weather Impact</div>
+            </div>
+        
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="C:\Users\Wolfrank\Desktop\GiGabyte\CodeWolf\UKDataProject\Data\Output\weather_severity.png" alt="Weather Severity">
+                </div>
+                <div class="title">Weather Severity</div>
+            </div>
+        
+        </div>
+        
+        <!-- Modal -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+                <img id="modalImage" class="modal-image" src="" alt="Modal Image">
+                <div id="modalTitle" class="modal-title"></div>
+            </div>
+        </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeBtn = document.getElementsByClassName('close')[0];
+        let isZoomed = false;
+        
+        // Open modal
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.onclick = function() {
+                const img = item.querySelector('img');
+                const title = item.querySelector('.title').textContent;
+                modal.style.display = 'block';
+                modalImg.src = img.src;
+                modalTitle.textContent = title;
+                setTimeout(() => {
+                    modal.classList.add('active');
+                }, 100);
+            }
+        });
+        
+        // Close modal
+        closeBtn.onclick = closeModal;
+        modal.onclick = function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        };
+        
+        // Toggle zoom on modal image click
+        modalImg.onclick = function(e) {
+            e.stopPropagation();
+            modal.classList.toggle('active');
+            isZoomed = !isZoomed;
+        };
+        
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+            isZoomed = false;
+        }
+        
+        // Handle escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    });
+    </script>
+    
+    </body>
+    </html>
+    
