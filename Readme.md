@@ -97,7 +97,7 @@ Total records analyzed: 529,294 accidents
 ## Interactive Dashboards
 Access the interactive Tableau dashboards:
 - [Location and Time Analysis](https://public.tableau.com/views/uksafetydata/LocationTimeofDayandYear)
-- [Severity and Weather Analysis](https://public.tableau.com/views/uksafetydata2/Dashboard1)
+- [Severity and Age Analysis](https://public.tableau.com/views/uksafetydata2/Dashboard1)
 
 ## Technologies Used
 - Python 3.8+
@@ -148,5 +148,4 @@ Wolfrank Guzman
 
 ## Acknowledgments
 - UK Department for Transport for providing the accident data
-- Contributors and reviewers who helped improve this analysis
 - The open-source community for the tools and libraries used
